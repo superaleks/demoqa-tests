@@ -3,7 +3,7 @@ package frontendtests.page_objects;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.WebDriver;
 
-public class AccountCreationPage extends BasePage {
+public class AnyOtherPage extends BasePage {
 
     public static final String MALE_TITLE_RADIO_BUTTON = "//label[@for='id_gender1']";
 
@@ -73,7 +73,7 @@ public class AccountCreationPage extends BasePage {
 
     final String addressAlias = faker.harryPotter().house();
 
-    public AccountCreationPage(WebDriver driver) {
+    public AnyOtherPage(WebDriver driver) {
         super(driver);
     }
 
