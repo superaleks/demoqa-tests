@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber", "json:target/cucumber-report.json"},
-        features = {"src/test/java/frontendtests/features/SampleFlow.feature"},
+        features = {"src/test/java/frontendtests/features/Elements.feature"},
         glue = {"frontendtests.serenity_definitions/"}
 )
 public class TestRunner {

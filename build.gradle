@@ -7,7 +7,6 @@ buildscript {
         classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.87")
         classpath "net.serenity-bdd:serenity-emailer:2.0.87"
     }
-
 }
 
 plugins {

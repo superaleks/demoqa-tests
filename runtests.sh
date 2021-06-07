@@ -1,2 +1,3 @@
 gradle clean test aggregate
-echo 'Aleks making a bash script!!'
+#This is just a practise file
+
