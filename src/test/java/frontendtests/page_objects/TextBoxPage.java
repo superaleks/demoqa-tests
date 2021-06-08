@@ -32,10 +32,7 @@ public class TextBoxPage extends BasePage {
         open();
     }
 
-    public void JSClick(WebElement element) {
-        JavascriptExecutor executor = (JavascriptExecutor)getDriver();
-        executor.executeScript("arguments[0].click();", element);
-    }
+
 
     public void insertFullName () {
         $(FULL_NAME_INPUT).type(firstName);

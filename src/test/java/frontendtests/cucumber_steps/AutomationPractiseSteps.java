@@ -68,15 +68,20 @@ public class AutomationPractiseSteps extends ScenarioSteps {
         checkboxPage.expandTheMenu();
     }
 
-
-    @Step("Obtain all the checkbox id's")
-    public List<String> getAllCheckboxIds() {
-        return checkboxPage.getAllCheckboxIds();
+    @Step("Check the 'Home' checkbox")
+    public void checkTheHomeCheckbox(){
+        checkboxPage.checkTheHomeCheckbox();
     }
 
-    @Step("Create an xpath")
-    public List<String> createXpath() {
-        return checkboxPage.createXpathsFromAllCheckboxes();
+    @Step("Verify the presence of the result list")
+    public boolean observesThatTheresultIsPresent(){
+        return checkboxPage.result();
     }
+
+    @Step("Obtain the list of checked items")
+    public List<String> getsCheckedItemList() {
+        return checkboxPage.getCheckedItemList();
+    }
+
 
 }

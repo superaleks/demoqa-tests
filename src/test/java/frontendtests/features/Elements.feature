@@ -8,7 +8,7 @@ Feature: Elements interaction
   Scenario: Check Box
     Given that the user needs to check a checkbox
     When he navigates to the checkbox and selects it
-    Then he can uncheck it as well
+    Then he can observe the change
 
 #  Scenario: Radio Buttons
 #    Given that the user needs to use a radiobutton

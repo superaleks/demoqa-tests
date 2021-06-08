@@ -41,11 +41,17 @@ public class AutomationPracticeStepDefinition {
     public void thatTheUserNeedsToCheckACheckbox() {
         user.openTheCheckboxPage();
         user.expandTheMenu();
-        user.getAllCheckboxIds();
+
     }
 
     @When("^he navigates to the checkbox and selects it$")
     public void heNavigatesToTheCheckboxAndSelectsIt()  {
-        user.createXpath();
+        user.checkTheHomeCheckbox();
+    }
+
+    @Then("^he can observe the change$")
+    public void heCanObserveTheChange() {
+        assertTrue(user.observesThatTheresultIsPresent());
+        user.getsCheckedItemList(); // to add assertions here
     }
 }

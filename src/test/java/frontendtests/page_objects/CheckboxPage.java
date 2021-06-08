@@ -1,8 +1,11 @@
 package frontendtests.page_objects;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import net.thucydides.core.webelements.Checkbox;
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidSelectorException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +15,7 @@ public class CheckboxPage extends BasePage {
 
     public final String EXPAND_THE_MENU = "//button[@title='Toggle']";
 
-    public final String DESKTOP_CHECKBOX = "//input[@id='tree-node-desktop']";
+    public final String HOME_CHECKBOX = "//input[@id='tree-node-home']";
 
     public final String DOCUMENTS_CHECKBOX = "//input[@id='tree-node-documents']";
 
@@ -30,35 +33,33 @@ public class CheckboxPage extends BasePage {
 
     public final String TREE_NODE_KEYWORD = "//*[@*[contains(.,'tree-node-')]]";
 
+    public final String RESULT_ID = "//div[@id='result']";
+
+    public final String CHECKED_ITEMS = "//span[@class='text-success']";
+
     public void expandTheMenu() {
         $(EXPAND_THE_MENU).click();
     }
 
-    public List<String> getAllCheckboxIds() {
-       List <WebElement> checkBoxes = getDriver().findElements(By.xpath(TREE_NODE_KEYWORD));
-       List <String> checkBoxIds = new ArrayList<>();
-       for (int i = 0; i < checkBoxes.size(); i++) {
-           checkBoxIds.add(checkBoxes.get(i).getAttribute("id"));
-        }
-    return checkBoxIds;
+    public void checkTheHomeCheckbox(){
+        JSClick($(HOME_CHECKBOX));
     }
 
-    public List<String> createXpathsFromAllCheckboxes()  {
-        List <String> xpaths = new ArrayList<>();
-        for (int i = 0; i < this.getAllCheckboxIds().size() ; i++) {
-            if(this.getAllCheckboxIds().get(i) != ""){
-                this.getAllCheckboxIds().get(i);
-                xpaths.add("//input[@id='"+ this.getAllCheckboxIds().get(i) + "'");
-                try {
-                    $(xpaths.get(i)).click();
-                } catch (InvalidSelectorException e) {
-                    e.printStackTrace();
-                }
-            }
+    public boolean result(){
+     return $(RESULT_ID).isPresent();
+    }
+
+    public List<String> getCheckedItemList() {
+        List<WebElement> checkedItems = getDriver().findElements(By.xpath(CHECKED_ITEMS));
+        List<String> checkedItemText = new ArrayList<>();
+        for (int i = 0; i < checkedItems.size(); i++) {
+            checkedItemText.add(checkedItems.get(i).getText());
+            System.out.println(checkedItems.get(i).getText());
         }
-        return xpaths;
+        return checkedItemText;
+    }
 
     }
 
 
-}
+
