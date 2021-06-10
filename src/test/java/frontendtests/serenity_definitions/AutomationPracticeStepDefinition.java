@@ -52,6 +52,6 @@ public class AutomationPracticeStepDefinition {
     @Then("^he can observe the change$")
     public void heCanObserveTheChange() {
         assertTrue(user.observesThatTheresultIsPresent());
-        user.getsCheckedItemList(); // to add assertions here
+        assertTrue(user.getsCheckedItemList().contains("home"));
     }
 }

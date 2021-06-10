@@ -1,9 +1,9 @@
 Feature: Elements interaction
 
-#  Scenario: Text box
-#    Given that the user wants to fill the form
-#    When he navigates to the form and enters the requested data
-#    Then he can submit succesfully
+  Scenario: Text box
+    Given that the user wants to fill the form
+    When he navigates to the form and enters the requested data
+    Then he can submit succesfully
 
   Scenario: Check Box
     Given that the user needs to check a checkbox

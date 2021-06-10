@@ -83,5 +83,4 @@ public class AutomationPractiseSteps extends ScenarioSteps {
         return checkboxPage.getCheckedItemList();
     }
 
-
 }

@@ -1,5 +1,6 @@
 package frontendtests.page_objects;
 
+import gherkin.StringUtils;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.webelements.Checkbox;
@@ -9,6 +10,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @DefaultUrl("https://demoqa.com/checkbox")
 public class CheckboxPage extends BasePage {
@@ -60,6 +63,7 @@ public class CheckboxPage extends BasePage {
     }
 
     }
+
 
 
 

@@ -20,7 +20,6 @@ public class BasePage extends PageObject {
 
     public static final String LOG_IN_LINK = "//a[@class='login']";
 
-
       public void navigateToTheHomePage() {
           open();
       }
